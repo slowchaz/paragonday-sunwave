@@ -1,3 +1,13 @@
+# Many Suns — Flickr recut (Oct 31 2026)
+
+The Are.na stand-ins are out of `ManySuns`. The cut is now 7 Flickr photos with true geotags plus the two Peaks Island frames. Every Flickr photo is CC BY or CC0, downloaded at the largest size the owner allows into `public/flickr/`, and credited in `CREDITS.md` (CC BY needs that credit wherever the video is posted). Labels are the Flickr locality and country; `lat`/`lon`/`tz` are real, so the clock time is the true sunset time for that spot on Oct 31 2026.
+
+Provenance of the old stand-ins, checked via the Are.na API: none carried a location; "Istanbul" was a still from Ulrike Königshofer's video work *Same Time. Different Time* (Vienna/Los Angeles), "Dakar" was a canvas-print mockup of a painting, "Chania" was Santorini, and the "Alicudi Sunsets" channel is Isolarii's mood board for its *A SUNSET with…* series, not per-photo documentation. The hand-pointing-at-the-sun frame (Are.na block 38315612, uploader hunter-shires) has no known author or place.
+
+Pulling more: `python3 -I scripts/flickr_pull.py OUT_DIR` (needs `FLICKR_API_KEY` in `.env`) searches geotagged, licence-filtered sunsets across 24 regions, detects the sun disc, rejects anything over a 2.6× crop, and writes numbered contact sheets plus `candidates.json`. 414 passed on the first run; the hand-picked sun-on-horizon set was 55. Chennai (#141) was dropped from the picks because the title and 06:38 capture time make it a sunrise. The Mkarangama frame is only 720×960 and will be soft at 1080×1350.
+
+---
+
 # Six directions — prototypes 4a–4f (current round)
 
 All in `sunwave/src/D1…D6*.tsx` on a shared brand layer (`shared.tsx`: Plantin readout and caption, the wave, the mark, real suncalc readouts). Renders in `sunwave/out/D*.mp4`, 1080×1350, no sound.
